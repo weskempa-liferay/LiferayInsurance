@@ -4,7 +4,10 @@ const navMenu = document.getElementById('navMenu');
 
 if (mobileMenuToggle && navMenu) {
   mobileMenuToggle.addEventListener('click', function() {
+    const isExpanded = navMenu.classList.contains('active');
     navMenu.classList.toggle('active');
+    
+    mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
     
     const lines = mobileMenuToggle.querySelectorAll('.hamburger-line');
     if (navMenu.classList.contains('active')) {
@@ -22,6 +25,7 @@ if (mobileMenuToggle && navMenu) {
     const navFragment = document.getElementById('navigation-fragment');
     if (navFragment && !navFragment.contains(e.target)) {
       navMenu.classList.remove('active');
+      mobileMenuToggle.setAttribute('aria-expanded', 'false');
       const lines = mobileMenuToggle.querySelectorAll('.hamburger-line');
       lines[0].style.transform = '';
       lines[1].style.opacity = '';
@@ -33,21 +37,39 @@ if (mobileMenuToggle && navMenu) {
 // Agent Finder Form
 const agentFinderForm = document.getElementById('agentFinderForm');
 if (agentFinderForm) {
+  const zipInput = document.getElementById('zipCode');
+  const zipError = document.getElementById('zipCodeError');
+  
   agentFinderForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    const zipCode = document.getElementById('zipCode').value;
+    const zipCode = zipInput.value;
     const productInterest = document.getElementById('productInterest').value;
     
-    if (zipCode.length === 5) {
-      alert(`Finding agents near ${zipCode}${productInterest ? ' for ' + productInterest : ''}`);
+    if (zipCode.length !== 5 || !/^\d{5}$/.test(zipCode)) {
+      zipInput.classList.add('invalid');
+      zipError.textContent = 'Please enter a valid 5-digit ZIP code';
+      zipError.classList.add('active');
+      zipInput.focus();
+      return;
     }
+    
+    zipInput.classList.remove('invalid');
+    zipError.classList.remove('active');
+    zipError.textContent = '';
+    
+    alert(`Finding agents near ${zipCode}${productInterest ? ' for ' + productInterest : ''}`);
   });
   
-  const zipInput = document.getElementById('zipCode');
   if (zipInput) {
     zipInput.addEventListener('input', function(e) {
       this.value = this.value.replace(/\D/g, '').slice(0, 5);
+      
+      if (this.classList.contains('invalid')) {
+        this.classList.remove('invalid');
+        zipError.classList.remove('active');
+        zipError.textContent = '';
+      }
     });
   }
 }

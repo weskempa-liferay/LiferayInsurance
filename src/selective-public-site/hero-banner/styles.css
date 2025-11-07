@@ -107,6 +107,22 @@
   box-shadow: 0 4px 12px rgba(255, 207, 49, 0.4);
 }
 
+.error-message {
+  display: none;
+  color: #d32f2f;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+.error-message.active {
+  display: block;
+}
+
+.form-control.invalid {
+  border-color: #d32f2f;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
