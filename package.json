@@ -1,0 +1,15 @@
+{
+  "name": "selective-insurance-fragments",
+  "version": "1.0.0",
+  "description": "Liferay DXP Fragment Collection for Selective Insurance Public Website",
+  "scripts": {
+    "preview": "npm install -g http-server && http-server ./preview -p 5000 -o"
+  },
+  "keywords": [
+    "liferay",
+    "fragments",
+    "selective-insurance"
+  ],
+  "author": "Selective Insurance",
+  "license": "MIT"
+}
