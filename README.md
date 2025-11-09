@@ -1,10 +1,10 @@
-# Selective Insurance - Liferay DXP Fragment Collection
+# LiferayInsurance - Liferay DXP Fragment Collection
 
-A comprehensive fragment collection for Selective Insurance's public website built for Liferay DXP platform.
+A comprehensive fragment collection for LiferayInsurance's public website built for Liferay DXP platform.
 
 ## Overview
 
-This project contains reusable UI fragments styled with Selective Insurance's brand identity:
+This project contains reusable UI fragments styled with LiferayInsurance's brand identity:
 - **Brand Colors**: Black (#000000) and Yellow (#FFCF31)
 - **Tagline**: "Be Uniquely Insured℠"
 - **Focus**: Customer attraction, revenue growth, and business user self-service
