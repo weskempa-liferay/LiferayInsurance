@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a comprehensive Liferay DXP fragment collection for Selective Insurance's digital experience. The project contains 9 fully-styled, configurable UI fragments that follow Selective's brand identity and support their business goals of customer attraction, revenue growth, and business user self-service. Includes both public-facing website fragments and a secure agent dashboard.
+This is a comprehensive Liferay DXP fragment collection for Selective Insurance's public website. The project contains 8 fully-styled, configurable UI fragments that follow Selective's brand identity and support their business goals of customer attraction, revenue growth, and business user self-service.
 
 **Brand Identity:**
 - Primary Color: Black (#000000)
@@ -24,8 +24,7 @@ selective-insurance-fragments/
 │       ├── myselective-feature/         # Account feature section
 │       ├── blog-cards/                  # Article grid layout
 │       ├── customer-reviews/            # Reviews display
-│       ├── footer/                      # Site footer
-│       └── agent-dashboard/             # Agent secure dashboard
+│       └── footer/                      # Site footer
 ├── preview/                             # Preview HTML & assets
 ├── README.md                            # Documentation
 └── package.json                         # Project metadata
@@ -81,16 +80,6 @@ selective-insurance-fragments/
 - Social media icons
 - Copyright with dynamic year
 - Legal links
-
-### 9. Agent Dashboard (agent-dashboard/)
-- **For secure agent experience**
-- Dashboard header with welcome message and agent ID
-- Quick stats cards: Active Policies, Pending Claims, New Leads, Upcoming Renewals
-- Quick action buttons (New Quote, Find Client, View Policies, etc.)
-- Recent activity feed with color-coded activity types
-- Client search form with recent search suggestions
-- Upcoming appointments list
-- Fully responsive dashboard layout
 
 ## Configuration Features
 
@@ -150,14 +139,8 @@ npx http-server ./preview -p 5000 -c-1
 
 ## Recent Changes
 
-- **November 10, 2025**: Added Agent Dashboard fragment for secure agent experience
-  - Quick stats, activity feed, client search, appointments
-  - Responsive design with mobile, tablet, and desktop layouts
-  - Interactive elements with hover states and click animations
-  - Passed architect review for code quality and accessibility
-- November 7, 2025: Initial fragment collection created with 8 public-facing fragments
-  - Added accessibility improvements (ARIA attributes, form validation)
-  - All fragments tested and previewed successfully
+- November 7, 2025: Initial fragment collection created with 8 fragments
+- All fragments tested and previewed successfully
 - Preview server configured and running on port 5000
 
 ## User Preferences

@@ -143,49 +143,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Agent Dashboard
-const clientSearchFormPreview = document.getElementById('clientSearchFormPreview');
-const clientSearchPreview = document.getElementById('clientSearchPreview');
-
-if (clientSearchFormPreview) {
-  clientSearchFormPreview.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const searchQuery = clientSearchPreview.value.trim();
-    
-    if (searchQuery) {
-      alert(`Searching for: ${searchQuery}`);
-    }
-  });
-}
-
-const suggestionTagsPreview = document.querySelectorAll('#agent-dashboard-fragment .suggestion-tag');
-suggestionTagsPreview.forEach(tag => {
-  tag.addEventListener('click', function() {
-    const searchText = this.textContent;
-    clientSearchPreview.value = searchText;
-    clientSearchPreview.focus();
-  });
-});
-
-const actionButtonsPreview = document.querySelectorAll('#agent-dashboard-fragment .action-btn');
-actionButtonsPreview.forEach(btn => {
-  btn.addEventListener('click', function(e) {
-    this.style.transform = 'scale(0.95) translateY(-2px)';
-    setTimeout(() => {
-      this.style.transform = '';
-    }, 150);
-  });
-});
-
-const statCardsPreview = document.querySelectorAll('#agent-dashboard-fragment .stat-card');
-statCardsPreview.forEach(card => {
-  card.addEventListener('click', function() {
-    this.style.transform = 'scale(0.98)';
-    setTimeout(() => {
-      this.style.transform = '';
-    }, 200);
-  });
-});
-
 console.log('Selective Insurance Fragment Collection Preview Loaded');
