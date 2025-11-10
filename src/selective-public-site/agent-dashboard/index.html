@@ -3,8 +3,8 @@
     
     <div class="dashboard-header">
       <div class="welcome-section">
-        <h1 class="dashboard-title">Welcome back, <span class="agent-name">[#agentName /]</span></h1>
-        <p class="agent-id">Agent ID: <span>[#agentId /]</span></p>
+        <h1 class="dashboard-title">Welcome back, <span class="agent-name">${user.getFirstName()}</span></h1>
+        <p class="agent-id">Agent ID: <span>${user.getUserId()}</span></p>
       </div>
       <div class="header-actions">
         <button class="icon-btn" aria-label="Notifications">
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    [#if showQuickStats.value]
+    [#if configuration.showQuickStats]
     <div class="quick-stats">
       <div class="stat-card">
         <div class="stat-icon" style="background: #FFCF31;">
@@ -89,7 +89,7 @@
 
     <div class="dashboard-grid">
       
-      [#if showQuickActions.value]
+      [#if configuration.showQuickActions]
       <div class="dashboard-card">
         <h2 class="card-title">Quick Actions</h2>
         <div class="quick-actions-grid">
@@ -140,7 +140,7 @@
       </div>
       [/#if]
 
-      [#if showRecentActivity.value]
+      [#if configuration.showRecentActivity]
       <div class="dashboard-card">
         <h2 class="card-title">Recent Activity</h2>
         <div class="activity-feed">
